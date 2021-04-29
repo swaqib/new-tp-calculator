@@ -1,17 +1,33 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      TP Calculator
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div class="container">
+    <ion-input [(ngModel)]="teeth" name="teeth" placeholder="Enter Teeth"></ion-input>
+    <ion-input [(ngModel)]="jaws" name="jaws" placeholder="Enter Jaws"></ion-input>
+    <ion-input [(ngModel)]="cp" name="cp" placeholder="Enter Current Price"></ion-input>
+    
+    <ion-button (click)="calcTP(teeth, jaws, cp)">
+      Calculate TP
+    </ion-button>
+    
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Calculated Values</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <p>The value of teeth is {{ teeth }}</p>
+        <p>The value of jaws is {{ jaws }}</p>
+        <p>The value of Target Price is {{ tp }}</p>
+        <p>The value of Current Price is {{ cp }}</p>
+    
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
